@@ -42,6 +42,8 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             Shoot();
+            //This will shake the camera
+            CameraShake.Instance.StartShake(6f, .1f);
         }
         //If Player presses space then dash
         if (Input.GetKeyDown(KeyCode.E))
