@@ -1587,7 +1587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Score: 0
-  IncrementPerFrame: 2
+  IncrementPerFrame: 3
 --- !u!114 &830841312
 MonoBehaviour:
   m_ObjectHideFlags: 0
