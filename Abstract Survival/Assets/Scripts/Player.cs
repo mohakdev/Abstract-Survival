@@ -48,7 +48,6 @@ public class Player : MonoBehaviour
         //If Player presses space then dash
         if (Input.GetKeyDown(KeyCode.E))
         {
-            print("Dashing");
             if (DashCoolCounter <= 0 && DashCounter <= 0)
             {
                 activeSpeed = dashSpeed;

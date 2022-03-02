@@ -30,7 +30,6 @@ public class EnemyScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        print("Collision Works");
         if (other.gameObject.name == "Bullet(Clone)")
         {
             audioPlayer.Play();
