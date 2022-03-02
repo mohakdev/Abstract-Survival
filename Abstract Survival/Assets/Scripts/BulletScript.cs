@@ -6,23 +6,27 @@ using UnityEngine.Audio;
 public class BulletScript : MonoBehaviour
 {
     private Rigidbody2D bulletBody;
-    //private AudioSource audioPlayer;
+    private AudioSource audioPlayer;
     public GameObject Effect;
     public int Speed;
     private void Awake()
     {
         bulletBody = GetComponent<Rigidbody2D>();
-        //audioPlayer = GetComponent<AudioSource>();
+        audioPlayer = GetComponent<AudioSource>();
     }
     public void Shoot(Vector2 direction)
     {
         bulletBody.AddForce(direction * Speed);
-        //audioPlayer.Play();
+        audioPlayer.Play();
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
         GameObject EffectClone = Instantiate(Effect, transform.position, transform.rotation);
         EffectClone.SetActive(true);
+        if (other.gameObject.name == "Enemy(Clone)" || other.gameObject.name == "Enemy")
+        {
+            Destroy(other.gameObject);
+        }
         Destroy(gameObject);
     }
 }

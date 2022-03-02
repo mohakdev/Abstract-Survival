@@ -85,4 +85,11 @@ public class Player : MonoBehaviour
         BulletScript Bullet = Instantiate(this.bulletCode, this.transform.position, this.transform.rotation);
         Bullet.Shoot(transform.up);
     }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.name == "Enemy" || other.gameObject.name == "Enemy(Clone)")
+        {
+            print("Game Over");
+        }
+    }
 }
