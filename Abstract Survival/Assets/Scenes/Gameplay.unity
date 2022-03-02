@@ -537,8 +537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095d02e9094b5f641b1f541661ae53d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
-  StoppingDistance: 0
+  Speed: 4
+  StoppingDistance: 1.3
   Player: {fileID: 1149344484}
 --- !u!212 &238940087
 SpriteRenderer:
