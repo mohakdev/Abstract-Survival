@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16040fa614f7e0c4f90fe9660deccb34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Effect: {fileID: 8847013388259858755, guid: 574a3ec4cd25fd74590591e55d29addf, type: 3}
+  BulletEffect: {fileID: 8847013388259858755, guid: 574a3ec4cd25fd74590591e55d29addf, type: 3}
   Speed: 500
 --- !u!82 &6424138664165637266
 AudioSource:

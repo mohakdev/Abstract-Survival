@@ -7,7 +7,7 @@ public class BulletScript : MonoBehaviour
 {
     private Rigidbody2D bulletBody;
     private AudioSource audioPlayer;
-    public GameObject Effect;
+    public GameObject BulletEffect;
     public int Speed;
     private void Awake()
     {
@@ -21,12 +21,8 @@ public class BulletScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        GameObject EffectClone = Instantiate(Effect, transform.position, transform.rotation);
+        GameObject EffectClone = Instantiate(BulletEffect, transform.position, transform.rotation);
         EffectClone.SetActive(true);
-        if (other.gameObject.name == "Enemy(Clone)" || other.gameObject.name == "Enemy")
-        {
-            Destroy(other.gameObject);
-        }
         Destroy(gameObject);
     }
 }
