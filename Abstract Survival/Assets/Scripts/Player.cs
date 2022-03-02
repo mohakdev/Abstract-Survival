@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public ScoreScript myScore;
+    public PauseMenu PauseScript;
     public BulletScript bulletCode;
     [Header("Player Settings :")]
     public int MovementSpeed;
@@ -39,7 +42,7 @@ public class Player : MonoBehaviour
         {
             TurnDirection = 0.0f;
         }
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) && !PauseScript.isActive)
         {
             Shoot();
             //This will shake the camera
@@ -88,7 +91,8 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.name == "Enemy" || other.gameObject.name == "Enemy(Clone)")
         {
-            print("Game Over");
+            myScore.SetHighScore();
+            SceneManager.LoadScene("Main Menu");
         }
     }
 }
